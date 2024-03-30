@@ -9,7 +9,8 @@
     "xmr.se"
   ],
   "allowCustomHomeservers": true,
-
+  "pushServer": "",
+  "pushKey": "",
   "hashRouter": {
     "enabled": false,
     "basename": "/"

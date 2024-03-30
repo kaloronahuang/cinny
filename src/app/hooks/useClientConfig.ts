@@ -1,10 +1,16 @@
 import { createContext, useContext } from 'react';
 
+export type PushServerProvider = {
+  type: "fcm" | "apple" | "mozilla",
+  credential?: object
+};
+
 export type ClientConfig = {
   defaultHomeserver?: number;
   homeserverList?: string[];
   allowCustomHomeservers?: boolean;
-
+  pushServer?: string;
+  pushKey?: string;
   hashRouter?: {
     enabled?: boolean;
     basename?: string;

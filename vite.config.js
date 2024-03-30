@@ -7,6 +7,7 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 import inject from '@rollup/plugin-inject';
 import { svgLoader } from './viteSvgLoader'
 import buildConfig from "./build.config"
+import { VitePWA } from "vite-plugin-pwa";
 
 const copyFiles = {
   targets: [
@@ -51,6 +52,18 @@ export default defineConfig({
     svgLoader(),
     wasm(),
     react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      injectRegister: null,
+      strategies: "injectManifest",
+      devOptions: {
+        enabled: true,
+        type: 'module'
+      },
+      injectManifest: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,json}"]
+      },
+    })
   ],
   optimizeDeps: {
     esbuildOptions: {

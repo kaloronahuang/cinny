@@ -73,7 +73,8 @@
     "slate-react": "0.98.4",
     "tippy.js": "6.3.7",
     "twemoji": "14.0.2",
-    "ua-parser-js": "1.0.35"
+    "ua-parser-js": "1.0.35",
+    "vite-plugin-pwa": "0.15.0"
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "0.2.3",

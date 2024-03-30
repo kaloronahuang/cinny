@@ -22,6 +22,7 @@ import { MatrixClientProvider } from '../../hooks/useMatrixClient';
 import { ClientContent } from './ClientContent';
 import { useSetting } from '../../state/hooks/settings';
 import { settingsAtom } from '../../state/settings';
+import WebPushManager from '../../organisms/settings/WebPushManager';
 
 function SystemEmojiFeature() {
   const [twitterEmoji] = useSetting(settingsAtom, 'twitterEmoji');
@@ -119,6 +120,7 @@ function Client() {
 
   return (
     <MatrixClientProvider value={initMatrix.matrixClient}>
+      <WebPushManager />
       <div className="client-container">
         <div className="navigation__wrapper" ref={navWrapperRef}>
           <Navigation />

@@ -13,11 +13,13 @@ import './index.scss';
 import settings from './client/state/settings';
 
 import App from './app/pages/App';
+import registerSW from './registerSW';
 
 document.body.classList.add(configClass, varsClass);
 settings.applyTheme();
 
 const mountApp = () => {
+  registerSW();
   const rootContainer = document.getElementById('root');
 
   if (rootContainer === null) {
